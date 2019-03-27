@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<style></style>
+		<style>
+			.parallax { 
+			/* The image used */
+			background-image: url("img_parallax.jpg");
+		
+			/* Set a specific height */
+			height: 500px;
+			/* Create the parallax scrolling effect */
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			}
+		</style>
+		
 		<title>Joseph's Website</title>
 	</head>
 	<body>
+		<div class="parallax"></div>
 		<button onclick="window.location.href = 'https://frc1885.slack.com/';">Slack</button>
 	</body>
 </html>
