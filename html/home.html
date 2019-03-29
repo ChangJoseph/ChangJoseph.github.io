@@ -7,11 +7,11 @@
 				background-image:radial-gradient(#af69dd,#4b2768);
 				font-size:72px;
 				columns:#b625f0;
-				color:#fee0ff;
+				color:#ffffffbd;
 				text-align:center;
 			}
 			.paragraphGradient {
-				height:1000px;
+				height:1155px;
 				background-image:linear-gradient(#793c5d94,#4251aa);
 				font-size:48px;
 				color:#ffbefe;
@@ -24,13 +24,33 @@
 				background-repeat: no-repeat;
 				background-size: cover;
 			}
+			.button {
+				background-color: #ffffff00;
+				border: 2px solid rgb(44, 101, 255);
+				color: #ffffff;
+				text-align: center;
+				font-size: 46px;
+				border-radius: 5%;
+
+				width: 25%;
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%,30%);
+			}
+			.button:hover {
+				background-color: #ffffff48
+			}
+			.button:active {
+				background-color: #ffffffad;
+				box-shadow: 0 5px #666;
+			}
 		</style>
 		
 		<title>Joseph's Website</title>
 	</head>
 	<body>
 		<div class="headerGradient">
-			Parallax testing
+			Joseph Inho Chang
 		</div>
 		<div class="parallax" style="background-image: url(../img/parallax.jpg);height: 650px;"></div>
 		<div class="paragraphGradient">
@@ -38,10 +58,20 @@
 			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</div>
-		<div class="parallax" style="background-image: url(../img/parallax2.jpg);height: 2160px;"></div>
+		<div class="parallax" style="background-image: url(../img/parallax2.jpg);height: 2160px;">
+			<!-- <img src="../img/static1.jpg" width="100"> -->
+			<img src="../img/static1.png" width="200" style="position:relative;left:43%;top:10%">
+		</div>
 		<div class="paragraphGradient" style="height:110px;font-size:60pt;">
 			Still here? Nice. Lets get started.
 		</div>
+		<div style="height:100px;background-color:#4251aa;">
+			<button class="button">Start</button>
+		</div>
 	</body>
-</html>
+</html
