@@ -21,7 +21,7 @@
 			div.menu {
 				width: 100%;
 				height: 100px;
-				background-color: #ffffff;
+				color:white;
 				margin: 6px 0;
 				position: sticky;
 				top: 0;
@@ -37,13 +37,19 @@
 				margin: 0px 5px;
 				float: left;
 				border-radius: 50%;
+				transition: .6s;
 				box-shadow: 5px 5px #3838385b;
 			}
 			div.icon:hover {
 				width: 90px;
 				height: 90px;
-				transition: .6s;
+				background-color:rgb(85, 85, 85);
 				transform: translate(-15px -15px);
+			}
+			div.icon:active {
+				width: 80px;
+				height: 80px;
+				background-color: rgb(90, 90, 90);
 			}
 			div.parallax {
 				/* The parallax scrolling effect */
@@ -54,11 +60,11 @@
 			}
 			button.click {
 				background-color: #ffffff00;
-				border: 2px solid rgb(44, 101, 255);
-				color: #ffffff;
+				border: 4px solid rgb(15, 31, 77);
+				color: #ffffff00;
 				text-align: center;
 				font-size: 46px;
-				border-radius: 5%;
+				border-radius: 10%;
 
 				width: 25%;
 				position: absolute;
@@ -66,18 +72,26 @@
 				transform: translate(-50%,30%);
 			}
 			button.click:hover {
-				background-color: #ffffff48
+				background-color: #38383848
 			}
 			button.click:active {
-				background-color: #ffffffad;
-				box-shadow: 0 5px #3b3a64;
+				background-color: #747474ad;
+				/* box-shadow: 0 5px #3b3a64; */
 			}
 		</style>
 		
 		<title>Joseph's Website</title>
 	</head>
 	<body>
-		<div class="menu" style="color:black;font-size:48pt;text-align:center;">
+		<div class="menu" style="background-color:white">
+			<div class="icon"></div>
+			<div class="icon"></div>
+			<div class="icon"></div>
+			<div class="icon"></div>
+			<div class="icon"></div>
+			<div class="icon"></div>
+			<div class="icon"></div>
+			<div class="icon"></div>
 			<div class="icon"></div>
 			<div class="icon"></div>
 			<div class="icon"></div>
@@ -96,13 +110,13 @@
 			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</div>
 		<div class="parallax" style="background-image: url(../img/parallax2.jpg);height: 2160px;">
-			<img src="../img/static1.png" width="200" style="position:relative;left:43%;top:10%">
+			<!-- <img src="../img/static1.png" width="200" style="position:relative;left:43%;top:10%"> -->
 		</div>
-		<div class="paragraphGradient" style="height:115px;font-size:60pt;text-align:center;">
+		<div style="height:115px;font-size:60pt;text-align:center;background-color:white;color:black;">
 			Still here? Nice. Lets get started.
 		</div>
-		<div style="height:100px;background-color:#4251aa;">
-			<button class="click" onclick="window.location.href = 'http://google.com/';">Start</button>
+		<div style="height:100px;background-color:#ffffff;">
+			<button class="click" onclick="window.location.href = 'http://google.com/';" style="color:black;font-size:46pt;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Start</button>
 		</div>
 	</body>
 </html
