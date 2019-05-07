@@ -3,8 +3,9 @@
 	<head>
 		<style>
 			div.headerGradient {
+				width: 100%;
 				height:110px;
-				background-color:rgb(19, 19, 19);
+				background-color:#200f50;
 				font-size:72px;
 				font-family:'Trebuchet MS';
 				columns:#b625f0;
@@ -19,37 +20,46 @@
 				opacity:0.7;
 			}
 			div.menu {
-				width: 100%;
-				height: 100px;
+				/* Spacing menu icons evenly from each other */
+				padding-left: 200px;
+				padding-right: 1300px;
+				display: flex;
+				flex-wrap: nowrap;
+				justify-content: space-between;
+				height: 95px;
+
+				background-color:rgb(231, 231, 231);
 				color:white;
 				margin: 6px 0;
-				position: sticky;
+				padding-left: 10px; /* Adds first space before buttons */
+				position: sticky; /* Sticks menu on top of screen */
 				top: 0;
 				left: 0;
 			}
 			div.icon {
+				/* margin: auto; */
 				width: 70px;
 				height: 70px;
 				background-color: grey;
 				position: relative;
-				top: 5px;
-				left: 2px;
-				margin: 0px 5px;
+				transform: translateY(-50%);
+				/* left: 2px; */
+				top: 50%;
 				float: left;
 				border-radius: 50%;
-				transition: .6s;
+				transition: .2s;
 				box-shadow: 5px 5px #3838385b;
 			}
 			div.icon:hover {
 				width: 90px;
 				height: 90px;
 				background-color:rgb(85, 85, 85);
-				transform: translate(-15px -15px);
+				/* transform: translate(-15px -15px); */
 			}
 			div.icon:active {
 				width: 80px;
 				height: 80px;
-				background-color: rgb(90, 90, 90);
+				background-color: #341588;
 			}
 			div.parallax {
 				/* The parallax scrolling effect */
@@ -83,13 +93,7 @@
 		<title>Joseph's Website</title>
 	</head>
 	<body>
-		<div class="menu" style="background-color:white">
-			<div class="icon"></div>
-			<div class="icon"></div>
-			<div class="icon"></div>
-			<div class="icon"></div>
-			<div class="icon"></div>
-			<div class="icon"></div>
+		<div class="menu">
 			<div class="icon"></div>
 			<div class="icon"></div>
 			<div class="icon"></div>
@@ -113,7 +117,7 @@
 			<!-- <img src="../img/static1.png" width="200" style="position:relative;left:43%;top:10%"> -->
 		</div>
 		<div style="height:115px;font-size:60pt;text-align:center;background-color:white;color:black;">
-			Still here? Nice. Lets get started.
+			Come check out my Github projects!
 		</div>
 		<div style="height:100px;background-color:#ffffff;">
 			<button class="click" onclick="window.location.href = 'https://github.com/ChangJoseph';" style="color:black;font-size:46pt;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Start</button>
