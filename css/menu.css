@@ -7,6 +7,7 @@ div.menu {
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 div.icon {
     width: 70px;
