@@ -1,0 +1,33 @@
+div.menu {
+    width: 100%;
+    height: 100px;
+    color:white;
+    margin: 6px 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+div.icon {
+    width: 70px;
+    height: 70px;
+    background-color: grey;
+    position: relative;
+    top: 5px;
+    left: 2px;
+    margin: 0px 5px;
+    float: left;
+    border-radius: 50%;
+    transition: .6s;
+    box-shadow: 5px 5px #3838385b;
+}
+div.icon:hover {
+    width: 90px;
+    height: 90px;
+    background-color:rgb(85, 85, 85);
+    transform: translate(-15px -15px);
+}
+div.icon:active {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(90, 90, 90);
+}
