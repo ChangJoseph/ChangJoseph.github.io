@@ -7,8 +7,8 @@ div.headerGradient {
     color:#ffffff;
     text-align:center;
 }
-div.paragraphGradient {
-    height:1155px;
+#paragraphGradient {
+    height:555px;
     background-image:linear-gradient(#793c5d94,#4251aa);
     font-size:48px;
     color:#ffbefe;

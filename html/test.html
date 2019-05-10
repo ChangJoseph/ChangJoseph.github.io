@@ -8,31 +8,39 @@
                 background-color: #ffffff;
 
             }
-            div.menu {
-                width: 35px;
-				height: 5px;
-				background-color: black;
-				margin: 6px 0;
-                transition: 2s;
-                position: relative;
-                top: 10px;
-                left: 10px;
-            }
-            div.menu:after {
 
+            div.animate {
+                width: 100px;
+                height: 100px;
+                background-color: #ff0707;
+                position: relative;
+                top: 20px;
+                left: 20px;
+                transition: .6s;
+                
+            }
+            div.animate:hover {
+                transform: scale(2) translate(50px, 50px);
+                overflow: auto;
             }
         </style>
     </head>
     <body>
-        <div class="header">
-            <div class="menu"></div>
-			<div class="menu"></div>
-            <div class="menu"></div>
+        <!-- Menu -->
+		<div id="menu">
+            <div onclick="location.href='../html/home.html';" class="icon"><img src="../img/ico_arrow.png" class="constrained"></img></div>
+            <div onclick="location.href='../html/profile.html';" class="icon"><img src="../img/ico_profile.png" class="constrained"></img></div>
+            <div onclick="location.href='https://github.com/ChangJoseph?tab=repositories';" class="icon"><img src="../img/ico_github.png" class="constrained"></img></div>
+            <div onclick="location.href='../html/test.html';" class="icon"><img src="../img/ico_power.png" class="constrained"></img></div>
+            <div onclick="location.href='https://www.youtube.com/channel/UCzFzc3L68Se4WJ-jMzIMazg';" class="icon"><img src="../img/ico_play.png" class="constrained"></img></div>
+            <div onclick="location.href='https://venmo.com/joseph__chang';" class="icon"><img src="../img/ico_visa.png" class="constrained"></img></div>
         </div>
 
-        <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+        <!-- <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
             Click me to display Date and Time.
         </button>
-        <p id="demo"></p>
+        <p id="demo"></p> -->
+
+        <div class="animate"></div>
     </body>
 </html>
