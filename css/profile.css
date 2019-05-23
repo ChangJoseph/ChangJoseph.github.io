@@ -1,4 +1,16 @@
 div.backdrop {
-    height: 1000px;
+    height: 1200px;
     background-color: grey;
+}
+
+h1 {
+    font-size: 75px;
+    color: aliceblue;
+}
+
+#pdf {
+    height: 80%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
 }

@@ -3,7 +3,7 @@
     height: 100px;
     color:white;
     background-color: rgb(221, 221, 221);
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
