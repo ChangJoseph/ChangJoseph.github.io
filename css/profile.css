@@ -14,3 +14,9 @@ h1 {
     margin-left: 25%;
     margin-right: 25%;
 }
+
+div.content {
+    max-width: 100%;
+    max-height: 100%;
+    
+}
