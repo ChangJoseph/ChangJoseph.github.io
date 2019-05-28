@@ -20,3 +20,26 @@ div.content {
     max-height: 100%;
     
 }
+
+img {
+    width: 300px;
+    height: 300px;
+    padding-left: calc(50% - 150px);
+}
+
+#projectsbg {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(194, 255, 235);
+}
+.projects {
+    margin-bottom: 200px;
+    max-height: 100%;
+}
+h2 {
+    color: purple;
+    font-size: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    max-height: 100%;
+}
