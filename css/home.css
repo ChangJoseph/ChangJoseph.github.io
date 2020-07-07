@@ -1,12 +1,3 @@
-div.headerGradient {
-    height:110px;
-    background-color:rgb(19, 19, 19);
-    font-size:72px;
-    font-family:'Trebuchet MS';
-    columns:#b625f0;
-    color:#ffffff;
-    text-align:center;
-}
 div.parallax {
     /* The parallax scrolling effect */
     background-attachment: fixed;
@@ -32,10 +23,4 @@ button.click:hover {
 }
 button.click:active {
     background-color: #747474ad;
-    /* box-shadow: 0 5px #3b3a64; */
 }
-
-/* h1 {
-    font-size: 40px;
-    color: rgb(154, 208, 255);
-} */
