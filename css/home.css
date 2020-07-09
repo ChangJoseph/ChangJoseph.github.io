@@ -1,9 +1,17 @@
+div.container {
+    background-attachment: scroll;
+    background-size:cover;
+    background-position:center;
+    width:30%;
+}
 div.parallax {
     /* The parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    /*object-fit: cover;*/
+
 }
 button.click {
     background-color: #ffffff00;
@@ -19,7 +27,7 @@ button.click {
     transform: translate(-50%,30%);
 }
 button.click:hover {
-    background-color: #38383848
+    background-color: #38383848;
 }
 button.click:active {
     background-color: #747474ad;
