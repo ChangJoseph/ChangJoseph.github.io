@@ -1,18 +1,20 @@
-div.container {
-    background-attachment: scroll;
-    background-size:cover;
-    background-position:center;
-    width:30%;
-}
 div.parallax {
     /* The parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color:#1f1f1f
     /*object-fit: cover;*/
 
 }
+
+.primary-text {
+    color: white;
+    /*font-size: 64px;*/
+    /*font-family: "JetBrains Mono";*/
+}
+
 button.click {
     background-color: #ffffff00;
     border: 4px solid rgb(15, 31, 77);
