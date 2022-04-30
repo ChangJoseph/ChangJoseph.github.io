@@ -4,6 +4,14 @@ body {
     height:auto;
 }
 
+div.flex {
+    padding-left: 15%;
+    padding-right: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 div.background-primary {
     background-attachment: fixed;
     background-position: center;
