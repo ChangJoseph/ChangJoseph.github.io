@@ -9,7 +9,4 @@ export default {
   },
   plugins: [],
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/master
