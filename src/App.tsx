@@ -69,7 +69,7 @@ const resumeData: ResumeData = {
     title: 'Data Sceintist | Software Developer | Full Stack Developer',
     about:
       'A passionate and creative frontend and backend developer with over 8 years of coding experience. Proven ability to develop projects from conception to deployment. Always eager to learn new technologies and frameworks.',
-    resumeUrl: '/resume.pdf',
+    resumeUrl: '/Feb2025_Resume.pdf',
     socials: [
       { name: 'GitHub', url: 'https://github.com/ChangJoseph', icon: FaGithub },
       { name: 'LinkedIn', url: 'https://www.linkedin.com/in/changjoseph/', icon: FaLinkedin },
@@ -84,8 +84,43 @@ const resumeData: ResumeData = {
       location: 'McLean, VA',
       description: 'As a versatile Senior consultant, I specialized in translating complex data into clear, presentable narratives for clients. I engineered dynamic dashboards and reports using a range of visualization tools, while also leveraging my backend engineering skills in React and Plotly Dash to build robust, custom solutions.',
       projects: [
-        { name: 'OEA Data Scientist', description: 'EV Carbon Free', achievements: ['', '', ''] },
-        { name: 'Carbon Free Electricity Acquisition', description: '', achievements: ['', ''] },
+        { name: 'Backend Developer and Data Scientist', description: 'Analytics Team and Electric Vehicle Carbon Free Team',
+          achievements: [
+            'Developed Python to SQLite backend to power a web app dashboarding tool',
+            'Pulled and cleaned relevant historical and live datasets and shapefiles',
+            'Rapidly prototyped front-end for dashboarding tool',
+            'Maintained and improved Python EV applications/tools used by the teams engineers',
+            'Refactored and revised various Python scripts to prevent continued use of deprecated library functions and inefficient code to greatly improve application runtimes and code readability',
+            'Built new application/tool features based on engineer feedback and needs']
+        },
+        {
+          name: 'Carbon Free Electricity Acquisition', description: 'Researched and documented CFE topics including geographic mappings for electric regions by utilities/entities, data sources for energy tracking and their potential use cases, and purpose of electric entities and their effect on other entities.',
+          achievements: []
+        },
+        {
+          name: 'Qlik Developer', description: 'Developed Qlik Dashboard for use in cloud.',
+          achievements: [
+            'Worked alongside documents data team to ensure correct formatting and styling for seamless data pull into the dashboard with potential for scaling',
+            'Optimized dashboard user experience by ensuring an intuitive interface while working around Qlik software limitations']
+        },
+        {
+          name: 'DHS Data Scientist ', description: 'Gave analytical support to the DHS team, conducting in-depth analyses on diverse datasets to uncover opportunities for further exploration and insight.',
+          achievements: [
+            'Documented database connections to facilitate seamless collaboration within teams and support team success through effective documentation practices',
+            'Conducted comprehensive analysis of motor vehicle fleet and fuel consumption patterns to formulate a strategic transition proposal from ICEVs to EVs',
+            'Conducted thorough investigations of validation dashboards to identify and rectify potential issues as well as discrepancies within their respective data sources ']
+        },
+        {
+          name: 'Internal Data Scientist', description: 'Collaborated with a colleague to analyze factors contributing to employee attrition, discern trends and anomalies, and provided data-driven recommendations derived from thorough analysis to strategically reduce overall attrition rates within the company.',
+          achievements: []
+        },
+        {
+          name: 'BAH Technical Excellence Data Science', description: 'Accelerated 7 week Data Science course with 195 hours of applied learning in two months.',
+          achievements: [
+            'Built further technical experience on regression, classification, clustering, Tableau, MatPlotLib, Plotly, and Seaborn',
+            'Used techniques including: Linear Regression, Multiple Linear Regression, Logistic Regression, kMeans, DBSCAN, Decision Trees, Random Forests, and more ',
+            'Designed a predictive machine learning model on top of a 50,000+ records large dataset to identify possible nicotine smokers and their health records using binary classification methods including kMeans, Logistic Regression, Decision Trees, and Random Forests ']
+        },
       ],
     },
     {
@@ -94,7 +129,27 @@ const resumeData: ResumeData = {
       period: 'Sep 2019 - Jun 2022',
       location: 'Fairfax, VA',
       description: '',
-      projects: [{ name: '', description: '', achievements: ['', ''] }],
+      projects: [
+        { name: 'Big Data Analyst', description: 'Conducted thorough analysis across multiple blockchain currencies, systematically flagging transactions involving addresses previously identified as malicious, thereby contributing to the continuous expansion and refinement of address database for improved threat detection and mitigation strategies.', achievements: [
+          'Engineered and refined MySQL scripts to incorporate machine learning concepts, enabling the proactive identification of potentially malicious Ethereum addresses',
+          'Developed Python scripts to efficiently manage tracking of transactions on Litecoins node, storing transaction data as pure binary JSON files to optimize for system memory within Python and preprocess the data for subsequent analysis purposes',
+          'Coauthored a published article on the analysis of Ethereum, Litecoin, and Bitcoin Cash, exploring insights, trends, and the identification of potentially malicious transactions',
+          'Achieved a significant reduction in storage utilization of blockchain node scripts by 25%, leveraging advanced optimization techniques, alongside an enhancement in efficiency of the MySQL query iterations (machine learning algorithm), resulting in a notable 50% improvement in turnaround time'] }
+      ],
+    },
+    {
+      // company: 'United States Patent and Trademark Office',
+      company: 'USPTO',
+      title: 'USPTO Intern',
+      period: 'May 2021 - Sep 2021',
+      location: 'Alexandria, VA',
+      description: '',
+      projects: [
+        { name: 'OCIO Operating Unit, Trademark Systems Division', description: 'Collaborated with the technical lead of the website development project for the USPTO Trademark Systems division to conduct peer review and enhance the quality of the Trademark Systems Divisions main website repository.', achievements: [
+          'Participated in the development and enhancement of an experimental fork within the websites repository, utilizing HTML, CSS, and TypeScript to implement innovative features and improvements',
+          'Observed and actively participated in daily scrum meetings, while also assisting the Scrum Master with administrative tasks for agile sprints, including Jira task management and estimation of working hours allocation']
+        }
+      ],
     },
   ],
   education: [
@@ -110,21 +165,23 @@ const resumeData: ResumeData = {
     },
   ],
   skills: [
-    'Python',
-    'Java',
+    {name: 'Python', url: 'https://github.com/ChangJoseph/DNS-Client-Translation'},
+    {name: 'Java', url: 'https://github.com/ChangJoseph/SpyfallAndroidStudio'},
     'SQL (MySQL, Oracle, SQLite)',
     'C Language',
     'HTML/CSS',
-    'VIM',
     'Javascript',
+    {name: 'VIM', url: 'https://github.com/ChangJoseph/Toyger-Scanner-and-Parser'},
     'REST APIs',
-    { name: 'Git & GitHub', url: 'https://github.com/' },
-    'C#',
+    {name: 'Git & GitHub', url: 'https://github.com/ChangJoseph/'},
+    {name: 'Machine Learning', url: 'https://github.com/ChangJoseph/Movie-Review-Sentiment-Analysis'},
     'Geospatial',
     'Excel',
     'Tableau',
     'Qlik',
     'PowerBI',
+    'C#',
+
   ],
 };
 
