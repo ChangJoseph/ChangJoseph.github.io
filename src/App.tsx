@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 import { FiChevronDown, FiExternalLink } from 'react-icons/fi';
@@ -14,9 +14,18 @@ type SocialLink = {
 };
 
 type Project = {
-  name: string;
+  name:string;
   description: string;
   achievements: string[];
+  period?: string; // Optional date range for projects
+};
+
+type PublicationItem = {
+  title: string;
+  authors: string;
+  journal: string;
+  date: string;
+  url?: string;
 };
 
 type Experience = {
@@ -26,20 +35,13 @@ type Experience = {
   location: string;
   description: string;
   projects: Project[];
+  publications?: PublicationItem[]; // Publications are now part of experience
 };
 
 type EducationItem = {
   institution: string;
   degree: string;
   period: string;
-};
-
-type PublicationItem = {
-  title: string;
-  authors: string;
-  journal: string;
-  date: string;
-  url?: string;
 };
 
 type Skill = string | { name: string; url: string };
@@ -54,7 +56,6 @@ type ResumeData = {
   };
   experience: Experience[];
   education: EducationItem[];
-  publications: PublicationItem[];
   skills: Skill[];
 };
 
@@ -69,9 +70,9 @@ const resumeData: ResumeData = {
     title: 'Data Sceintist | Software Developer | Full Stack Developer',
     about:
       'A passionate and creative frontend and backend developer with over 8 years of coding experience. Proven ability to develop projects from conception to deployment. Always eager to learn new technologies and frameworks.',
-    resumeUrl: '/Feb2025_Resume.pdf',
+    resumeUrl: '/Feb2025_Resume.pdf', // Resume File Link
     socials: [
-      { name: 'GitHub', url: 'https://github.com/ChangJoseph', icon: FaGithub },
+      { name: 'GitHub', url: 'https://github.com/ChangJoseph/', icon: FaGithub },
       { name: 'LinkedIn', url: 'https://www.linkedin.com/in/changjoseph/', icon: FaLinkedin },
       { name: 'Email', url: 'mailto:me@changjoseph.com', icon: FaEnvelope },
     ],
@@ -84,27 +85,31 @@ const resumeData: ResumeData = {
       location: 'McLean, VA',
       description: 'As a versatile Senior consultant, I specialized in translating complex data into clear, presentable narratives for clients. I engineered dynamic dashboards and reports using a range of visualization tools, while also leveraging my backend engineering skills in React and Plotly Dash to build robust, custom solutions.',
       projects: [
-        { name: 'Backend Developer and Data Scientist', description: 'Analytics Team and Electric Vehicle Carbon Free Team',
+        { name: 'AF Analytics Team Backend Developer and Data Scientist', description: 'Lead team\'s backend process and designed portions of the main database, and gathered data source files and live data connections for ingestion into the database.',
           achievements: [
             'Developed Python to SQLite backend to power a web app dashboarding tool',
             'Pulled and cleaned relevant historical and live datasets and shapefiles',
-            'Rapidly prototyped front-end for dashboarding tool',
+            'Supported rapidly prototyping front-end for dashboarding tool']
+        },
+        { name: 'AF Electric Vehicle Carbon Free Team Data Engineer', description: 'Backfilled for previous data engineer with goal to implement pending features, fix electrical engineering calculations, and squash many of the script\'s bugs.',
+          achievements: [
             'Maintained and improved Python EV applications/tools used by the teams engineers',
             'Refactored and revised various Python scripts to prevent continued use of deprecated library functions and inefficient code to greatly improve application runtimes and code readability',
             'Built new application/tool features based on engineer feedback and needs']
         },
         {
-          name: 'Carbon Free Electricity Acquisition', description: 'Researched and documented CFE topics including geographic mappings for electric regions by utilities/entities, data sources for energy tracking and their potential use cases, and purpose of electric entities and their effect on other entities.',
-          achievements: []
+          name: 'Carbon Free Electricity Acquisition Data Scientist', description: 'Researched and documented CFE topics including geographic mappings for electric regions by utilities/entities, data sources for energy tracking and their potential use cases, and purpose of electric entities and their effect on other entities.',
+          achievements: [
+            'Forecasted anticipated electrical load growth and validated historical electrical load for many sites by utilizing internal cloud Energy Consumption datasets as well as public energy datasets']
         },
         {
-          name: 'Qlik Developer', description: 'Developed Qlik Dashboard for use in cloud.',
+          name: 'Qlik Developer', description: 'Developed a Qlik Dashboard from its basic wireframe to its fully deployed state in an internal cloud environment.',
           achievements: [
             'Worked alongside documents data team to ensure correct formatting and styling for seamless data pull into the dashboard with potential for scaling',
             'Optimized dashboard user experience by ensuring an intuitive interface while working around Qlik software limitations']
         },
         {
-          name: 'DHS Data Scientist ', description: 'Gave analytical support to the DHS team, conducting in-depth analyses on diverse datasets to uncover opportunities for further exploration and insight.',
+          name: 'DHS Data Scientist ', description: 'Analytical support for the DHS team, conducting in-depth analyses on diverse datasets to uncover opportunities for further exploration and insight.',
           achievements: [
             'Documented database connections to facilitate seamless collaboration within teams and support team success through effective documentation practices',
             'Conducted comprehensive analysis of motor vehicle fleet and fuel consumption patterns to formulate a strategic transition proposal from ICEVs to EVs',
@@ -136,10 +141,18 @@ const resumeData: ResumeData = {
           'Coauthored a published article on the analysis of Ethereum, Litecoin, and Bitcoin Cash, exploring insights, trends, and the identification of potentially malicious transactions',
           'Achieved a significant reduction in storage utilization of blockchain node scripts by 25%, leveraging advanced optimization techniques, alongside an enhancement in efficiency of the MySQL query iterations (machine learning algorithm), resulting in a notable 50% improvement in turnaround time'] }
       ],
+      publications: [
+        {
+          title: 'Measuring Illicit Activity in DeFi: The Case of Ethereum',
+          authors: 'Jiasun Li, Foteini Baldimtsi, Joao P. Brandao, Maurice Kugler, Rafeh Hulays, Eric Showers, Zain Ali, Joseph Chang',
+          journal: 'Springer, Berlin, Heidelberg',
+          date: '9/17/2021',
+          url: 'https://doi.org/10.1007/978-3-662-63958-0_18',
+        },
+      ]
     },
     {
-      // company: 'United States Patent and Trademark Office',
-      company: 'USPTO',
+      company: 'United States Patent and Trademark Office',
       title: 'USPTO Intern',
       period: 'May 2021 - Sep 2021',
       location: 'Alexandria, VA',
@@ -155,23 +168,14 @@ const resumeData: ResumeData = {
   education: [
     { institution: 'George Mason University', degree: 'B.S. in Computer Science', period: '2022' },
   ],
-  publications: [
-    {
-      title: 'Measuring Illicit Activity in DeFi: The Case of Ethereum',
-      authors: 'Jiasun Li, Foteini Baldimtsi, Joao P. Brandao, Maurice Kugler, Rafeh Hulays, Eric Showers, Zain Ali, Joseph Chang',
-      journal: 'Springer, Berlin, Heidelberg',
-      date: '9/17/2021',
-      url: 'https://doi.org/10.1007/978-3-662-63958-0_18',
-    },
-  ],
   skills: [
     {name: 'Python', url: 'https://github.com/ChangJoseph/DNS-Client-Translation'},
     {name: 'Java', url: 'https://github.com/ChangJoseph/SpyfallAndroidStudio'},
     'SQL (MySQL, Oracle, SQLite)',
     'C Language',
-    'HTML/CSS',
-    'Javascript',
-    {name: 'VIM', url: 'https://github.com/ChangJoseph/Toyger-Scanner-and-Parser'},
+    {name: 'HTML/CSS', url: 'https://www.changjoseph.com/'},
+    {name: 'Javascript', url: 'https://www.changjoseph.com/'},
+    'VIM',
     'REST APIs',
     {name: 'Git & GitHub', url: 'https://github.com/ChangJoseph/'},
     {name: 'Machine Learning', url: 'https://github.com/ChangJoseph/Movie-Review-Sentiment-Analysis'},
@@ -181,7 +185,6 @@ const resumeData: ResumeData = {
     'Qlik',
     'PowerBI',
     'C#',
-
   ],
 };
 
@@ -193,13 +196,13 @@ const resumeData: ResumeData = {
 const Section: React.FC<{ title: string; children: React.ReactNode; id: string }> = ({ title, children, id }) => (
   <motion.section
     id={id}
-    className="py-12 md:py-16"
+    className="py-8 md:py-12" // Reduced vertical padding
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.2 }}
     transition={{ duration: 0.5 }}
   >
-    <h2 className="text-3xl font-bold mb-8 relative text-white">
+    <h2 className="text-3xl font-bold mb-6 relative text-white"> {/* Reduced bottom margin */}
       {title}
       <span className="absolute -bottom-2 left-0 w-16 h-1 bg-violet-500 rounded-full"></span>
     </h2>
@@ -207,16 +210,23 @@ const Section: React.FC<{ title: string; children: React.ReactNode; id: string }
   </motion.section>
 );
 
-const ProjectAccordion: React.FC<{ project: Project }> = ({ project }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const ProjectAccordion: React.FC<{
+  project: Project;
+  isOpen: boolean;
+  onToggle: () => void;
+}> = ({ project, isOpen, onToggle }) => {
   return (
     <div className="border border-zinc-700/80 rounded-lg mb-4 overflow-hidden bg-zinc-800/50 shadow-md">
       <motion.button
         className="w-full text-left p-4 flex justify-between items-center bg-zinc-800 hover:bg-zinc-700/60 transition-colors duration-300"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={onToggle}
       >
-        <h4 className="font-semibold text-lg text-violet-300">{project.name}</h4>
+        <div className="flex flex-col md:flex-row md:items-center md:gap-3">
+          <h4 className="font-semibold text-lg text-violet-300">{project.name}</h4>
+          {project.period && (
+            <span className="text-zinc-400 text-sm font-normal mt-1 md:mt-0">{project.period}</span>
+          )}
+        </div>
         <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
           <FiChevronDown size={24} />
         </motion.div>
@@ -250,7 +260,17 @@ const ProjectAccordion: React.FC<{ project: Project }> = ({ project }) => {
 
 export default function ReactiveResumePage() {
   const [activeCompanyIndex, setActiveCompanyIndex] = useState(0);
+  const [openProjectIndex, setOpenProjectIndex] = useState<number | null>(null);
   const activeExperience = resumeData.experience[activeCompanyIndex];
+
+  useEffect(() => {
+    const currentExperience = resumeData.experience[activeCompanyIndex];
+    if (currentExperience.projects.length === 1) {
+      setOpenProjectIndex(0);
+    } else {
+      setOpenProjectIndex(null);
+    }
+  }, [activeCompanyIndex]);
 
   const skillVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -264,7 +284,7 @@ export default function ReactiveResumePage() {
       <div className="max-w-5xl mx-auto p-4 sm:p-8">
         
         <motion.header
-          className="text-center py-12 md:py-16"
+          className="text-center py-8 md:py-12" // Reduced vertical padding
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -303,7 +323,7 @@ export default function ReactiveResumePage() {
                   <button
                     key={exp.company}
                     onClick={() => setActiveCompanyIndex(index)}
-                    className={`text-left p-3 w-full whitespace-nowrap md:border-l-4 transition-all duration-300 ${
+                    className={`text-left p-3 w-full md:border-l-4 transition-all duration-300 ${
                       index === activeCompanyIndex
                         ? 'bg-violet-600/10 text-violet-300 border-violet-500'
                         : 'border-zinc-700 hover:bg-zinc-700/50 hover:border-zinc-500'
@@ -326,8 +346,47 @@ export default function ReactiveResumePage() {
                     <h3 className="text-2xl font-bold text-white">{activeExperience.title} <span className="text-xl text-violet-400">@ {activeExperience.company}</span></h3>
                     <p className="text-zinc-400 mt-1 mb-4">{activeExperience.period} | {activeExperience.location}</p>
                     <p className="text-zinc-300 mb-6">{activeExperience.description}</p>
+                    
                     <h4 className="text-xl font-semibold mb-4 text-white">Contracts & Projects</h4>
-                    {activeExperience.projects.map((proj, i) => <ProjectAccordion key={i} project={proj} />)}
+                    {activeExperience.projects.map((proj, i) => (
+                      <ProjectAccordion
+                        key={i}
+                        project={proj}
+                        isOpen={openProjectIndex === i}
+                        onToggle={() => {
+                          setOpenProjectIndex(prevIndex => (prevIndex === i ? null : i));
+                        }}
+                      />
+                    ))}
+
+                    {activeExperience.publications && activeExperience.publications.length > 0 && (
+                      <>
+                        <h4 className="text-xl font-semibold mt-8 mb-4 text-white">Publications</h4>
+                        <div className="space-y-6">
+                          {activeExperience.publications.map((pub, i) => (
+                            <div key={i} className="bg-zinc-800/60 p-6 rounded-lg border border-zinc-700/50">
+                              <h5 className="text-lg font-semibold text-white">
+                                {pub.url ? (
+                                  <a
+                                    href={pub.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 group hover:text-violet-400 transition-colors duration-300"
+                                  >
+                                    <span>{pub.title}</span>
+                                    <FiExternalLink className="opacity-70 group-hover:opacity-100" size={16} />
+                                  </a>
+                                ) : (
+                                  pub.title
+                                )}
+                              </h5>
+                              <p className="text-zinc-400 mt-2">{pub.authors}</p>
+                              <p className="text-zinc-300 italic mt-1">{pub.journal}, {pub.date}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    )}
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -344,35 +403,6 @@ export default function ReactiveResumePage() {
                 </div>
               ))}
             </div>
-
-            {resumeData.publications && resumeData.publications.length > 0 && (
-              <>
-                <h3 className="text-2xl font-bold mt-12 mb-6 relative text-white">Publications</h3>
-                <div className="space-y-6">
-                  {resumeData.publications.map((pub, i) => (
-                    <div key={i} className="bg-zinc-800/60 p-6 rounded-lg border border-zinc-700/50">
-                      <h4 className="text-lg font-semibold text-white">
-                        {pub.url ? (
-                          <a
-                            href={pub.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 group hover:text-violet-400 transition-colors duration-300"
-                          >
-                            <span>{pub.title}</span>
-                            <FiExternalLink className="opacity-70 group-hover:opacity-100" size={16} />
-                          </a>
-                        ) : (
-                          pub.title
-                        )}
-                      </h4>
-                      <p className="text-zinc-400 mt-2">{pub.authors}</p>
-                      <p className="text-zinc-300 italic mt-1">{pub.journal}, {pub.date}</p>
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
           </Section>
 
           <Section title="Technical Skills" id="skills">
@@ -407,7 +437,7 @@ export default function ReactiveResumePage() {
           </Section>
         </main>
         
-        <footer className="text-center py-8 mt-16 border-t border-zinc-800">
+        <footer className="text-center py-8 mt-12 border-t border-zinc-800"> {/* Reduced top margin */}
             <p className="text-zinc-500">© {new Date().getFullYear()} {resumeData.main.name}. Built with React & Tailwind CSS.</p>
         </footer>
       </div>
