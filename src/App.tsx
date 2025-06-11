@@ -67,9 +67,9 @@ type ResumeData = {
 const resumeData: ResumeData = {
   main: {
     name: 'Joseph Chang',
-    title: 'Data Sceintist | Software Developer | Full Stack Developer',
+    title: 'Data Scientist | Software Developer | Web Developer',
     about:
-      'A passionate and creative frontend and backend developer with over 8 years of coding experience. Proven ability to develop projects from conception to deployment. Always eager to learn new technologies and frameworks.',
+      'A passionate and creative data scientist & engineer, software developer, and frontend & backend developer with over 8 years of coding experience. Proven ability to develop projects from conception to deployment. Always eager to learn new technologies and frameworks.',
     resumeUrl: '/Feb2025_Resume.pdf', // Resume File Link
     socials: [
       { name: 'GitHub', url: 'https://github.com/ChangJoseph/', icon: FaGithub },
