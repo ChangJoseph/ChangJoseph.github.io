@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Page Not Found</title>
+    <script>
+      var path = window.location.pathname;
+      if (path.startsWith('/')) {
+        path = path.substring(1); // Remove leading slash
+      }
+      var newPath = '/' + path.split('/')[0] + '/'; // TODO Might need adjustment
+      sessionStorage.redirect = location.href;
+      location.replace('/index.html'); // Redirect to main index.html
+    </script>
+  </head>
+  <body></body>
+</html>
