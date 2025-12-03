@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Page Not Found</title>
-    <script>
-      var path = window.location.pathname;
-      if (path.startsWith('/')) {
-        path = path.substring(1); // Remove leading slash
-      }
-      var newPath = '/' + path.split('/')[0] + '/'; // TODO Might need adjustment
-      sessionStorage.redirect = location.href;
-      location.replace('/index.html'); // Redirect to main index.html
-    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/j_logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Joseph Chang</title>
+    <script type="module" crossorigin src="/assets/index-DcWsxb9d.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-zOpNraIj.css">
   </head>
-  <body></body>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
